@@ -938,6 +938,9 @@ and (min-width: 1024px) {
     span {
         font-size: 30px;
     }
+    header {
+        padding-bottom: 30px;
+    }
     div.a {
         font-family: 'Architects Daughter';
         border: 10px solid #f25f12;
@@ -1040,7 +1043,7 @@ and (min-width: 1024px) {
     .right {
         position: absolute;
         display: block;
-        top: 17%;
+        top: 20%;
         left: 12%;
         right: 18%;
         margin: -3%;

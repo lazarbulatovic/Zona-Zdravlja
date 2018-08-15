@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 
 <head>
     <meta lang="en">
@@ -20,153 +21,368 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <script src="js/jssor.slider-27.4.0.min.js" type="text/javascript"></script>
 
 </head>
+
+
+
+
+
+
+<script type="text/javascript">
+    jssor_1_slider_init = function() {
+
+        var jssor_1_SlideoTransitions = [
+            [{
+                b: -1,
+                d: 1,
+                o: -0.7
+            }],
+            [{
+                b: 900,
+                d: 2000,
+                x: -379,
+                e: {
+                    x: 7
+                }
+            }],
+            [{
+                b: 900,
+                d: 2000,
+                x: -379,
+                e: {
+                    x: 7
+                }
+            }],
+            [{
+                b: -1,
+                d: 1,
+                o: -1,
+                sX: 2,
+                sY: 2
+            }, {
+                b: 0,
+                d: 900,
+                x: -171,
+                y: -341,
+                o: 1,
+                sX: -2,
+                sY: -2,
+                e: {
+                    x: 3,
+                    y: 3,
+                    sX: 3,
+                    sY: 3
+                }
+            }, {
+                b: 900,
+                d: 1600,
+                x: -283,
+                o: -1,
+                e: {
+                    x: 16
+                }
+            }]
+        ];
+
+        var jssor_1_options = {
+            $AutoPlay: 1,
+            $SlideDuration: 800,
+            $SlideEasing: $Jease$.$OutQuint,
+            $CaptionSliderOptions: {
+                $Class: $JssorCaptionSlideo$,
+                $Transitions: jssor_1_SlideoTransitions
+            },
+            $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+            },
+            $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+            }
+        };
+
+        var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+        /*#region responsive code begin*/
+
+        var MAX_WIDTH = 3000;
+
+        function ScaleSlider() {
+            var containerElement = jssor_1_slider.$Elmt.parentNode;
+            var containerWidth = containerElement.clientWidth;
+
+            if (containerWidth) {
+
+                var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                jssor_1_slider.$ScaleWidth(expectedWidth);
+            } else {
+                window.setTimeout(ScaleSlider, 30);
+            }
+        }
+
+        ScaleSlider();
+
+        $Jssor$.$AddEvent(window, "load", ScaleSlider);
+        $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+        $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+        /*#endregion responsive code end*/
+    };
+</script>
 
 <body>
     <div id="contrainer">
         <div id="wrapper">
+            <div class="top-head">
+                <img class="logo" src="img/logo.jpg" alt="Logo">
+                <div class="wrapper3">
+                    <a href="#"><i class="ion-social-facebook"></i></a>
+                    <a href="#"><i class="ion-social-googleplus"></i></a>
+                    <a href="#"><i class="ion-social-twitter"></i></a>
+                    <a href="#"><i class="ion-social-instagram"></i></a>
+                    <a href="#"><i class="ion-social-youtube"></i></a>
+                    <a href="#"><i class="ion-social-linkedin"></i></a>
+                </div>
+            </div>
             <div id="header">
-                <div class="background">
-                    <h1>Zona <br>Zdravlja</h1>
+                <div id="jssor_1">
+                    <!-- Loading Screen -->
+                    <div data-u="loading" class="jssorl-009-spin">
+                        <img src="img/spin.svg" />
+                    </div>
+                    <div class="slides" data-u="slides">
+                        <div>
+                            <img data-u="image" src="img/1.jpg" />
+                        </div>
+                        <div>
+                            <img data-u="image" src="img/4.jpg" />
+                        </div>
+                        <div>
+                            <img data-u="image" src="img/6.jpg" />
+                        </div>
+                        <div>
+                            <img data-u="image" src="img/2.jpeg" />
+                        </div>
+                        <div>
+                            <img data-u="image" src="img/3.png" />
+                        </div>
+                        <div>
+                            <img data-u="image" src="img/5.jpeg" />
+                        </div>
+                    </div>
+                    <!-- Bullet Navigator -->
+                    <div data-u="navigator" class="jssorb032" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                        <div data-u="prototype" class="i">
+                            <svg class="viewbox" viewbox="0 0 16000 16000">
+                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                </svg>
+                        </div>
+                    </div>
+                    <!-- Arrow Navigator -->
+                    <div data-u="arrowleft" class="jssora051" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                        <svg class="viewbox" viewbox="0 0 16000 16000">
+                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+                    </div>
+                    <div data-u="arrowright" id="jssora051" class="jssora051" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                        <svg class="viewbox" viewbox="0 0 16000 16000">
+                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+                    </div>
                 </div>
             </div>
             <div id="contrainer">
                 <nav id="primary_nav_wrap">
-                    <ul class="primary_nav_wrap js--main_nav">
+                    <ul class="primary_nav_wrap js--main-nav">
                         <li class="current-menu-item"><a href="Pocetna.html">Pocetna</a></li>
                         <li><a href="#">Pravilna Ishrana</a>
                             <ul>
                                 <li><a href="Osnovni Principi.html">Osnovni Principi</a></li>
                                 <li><a href="Sta je zdrav zivot.html">Sta je zdrav zivot?</a></li>
-                                <li><a href="Prirodni ciklusi.html">Prirodni ciklusi</a></li>
+                                <li><a href="Prirodni ciklusi.html">Prirodni ciklusi zivota</a></li>
                                 <li><a href="Voda.html">Voda i njena vaznost</a></li>
                             </ul>
-
-                            <li><a href="#">Recepti</a>
-                                <ul>
-                                    <li><a href="Mediteranski recepti.html">Mediteranski Recepti</a></li>
-                                    <li><a href="Vegeterijanski recepti.html">Vegeterijanski Recepti</a></li>
-                                    <li><a href="Recepti sa sojom.html">Recepti sa Sojom</a></li>
-                                </ul>
+                        </li>
+                        <li><a href="#">Recepti</a>
+                            <ul>
+                                <li><a href="Mediteranski recepti.html">Mediteranski Recepti</a></li>
+                                <li><a href="Vegeterijanski recepti.html">Vegeterijanski Recepti</a></li>
+                                <li><a href="Recepti sa sojom.html">Recepti sa Sojom</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Mrsavljenje</a>
+                            <ul>
+                                <li class="dir"><a href="Kako Mrsaviti.html">Kako Mrsaviti?</a></li>
+                                <li class="dir"><a href="Zasto angazovati nutricionistu.html">Zasto angazovati nutricionistu</a>
+                                    <li><a href="Mrsavljenje i fizicka aktivnost.html">Mrsavljenje i fizicka aktivnost</a></li>
+                                    <li><a href="Da li mrsavljenje uvek uspeva.html">Da li mrsavljenje uvek uspeva</a></li>
+                                    <li><a href="Mrsavljenje je proces.html">Mrsavljenje je proces</a></li>
+                                    <li><a href="Uticaj dijete na telo i duh.html">Uticaj dijete na telo i duh</a></li>
+                            </ul>
                             </li>
-                            <li><a href="#">Mrsavljenje</a>
-                                <ul>
-                                    <li class="dir"><a href="Kako Mrsaviti.html">Kako Mrsaviti?</a></li>
-                                    <li class="dir"><a href="Zasto angazovati nutricionistu.html">Zasto angazovati nutricionistu</a>
-                                        <li><a href="Mrsavljenje i fizicka aktivnost.html">Mrsavljenje i fizicka aktivnost</a></li>
-                                        <li><a href="Da li mrsavljenje uvek uspeva.html">Da li mrsavljenje uvek uspeva</a></li>
-                                        <li><a href="Mrsavljenje je proces.html">Mrsavljenje je proces</a></li>
-                                        <li><a href="Uticaj dijete na telo i duh.html">Uticaj dijete na telo i duh</a></li>
-                                </ul>
-                                </li>
-                                <li><a href="Vezbanje.html">Vezbanje</a></li>
-                                <li><a href="Video.html">Video</a></li>
-                                <li><a href="Literatura.html">Literatura</a></li>
+                            <li><a href="Vezbanje.html">Vezbanje</a></li>
+                            <li><a href="Video.html">Video</a></li>
+                            <li><a href="Literatura.html">Literatura</a></li>
                     </ul>
                 </nav>
-                <a class="mobile_nav_icon js--nav_icon"><i class="ion-close"></i> </a>
+                <a class="mobile_nav_icon js--nav_icon"><i class="ion-navicon-round"></i></a>
 
             </div>
+
+
             <div id="contrainer">
-                <div class="right">
-                    <a href="https://www.youtube.com/?hl=sr&gl=RS"><img class="sponzor" src="img/sponsors_icon.jpg" alt=""></a>
-                    <a href="https://www.youtube.com/?hl=sr&gl=RS"><img class="sponzor2" src="img/sponsors_icon.jpg" alt=""></a>
-                    <a href="https://www.youtube.com/?hl=sr&gl=RS"><img class="sponzor3" src="img/sponsors_icon.jpg" alt=""></a>
-                    <a href="https://www.youtube.com/?hl=sr&gl=RS"><img class="sponzor4" src="img/sponsors_icon.jpg" alt=""></a>
-                </div>
-
-
-
-                <div class="a"><span style="color:#f25f12" style="font-size: 30px"><strong>VODA I NJENA VAZNOST</strong></span><br><br> Postoji jedna namirnica koju mi uzimamo zdravo za gotovo, ali čija važnost nadilazi važnost svih drugih. To je obična, čista voda, koju neki prezrivo nazivaju "česmovača". Ali, imajte u vidu da čovek može da gladuje 40 dana, pa je čak bilo eksperimenata i sa 100 dana gladovanja, ali bez vode ne može da izdrži ni 10 dana.<br><br> <img class="pocetna2" src="img/voda1.jpg" alt="">Nedovoljno unošenje vode postepeno i neprimetno menja fiziologiju organizma i dovodi do niza hroničnih degenerativnih promena tkiva i organa. Verovali ili ne, ali čak i takve bolesti kao što su čir na želucu, visok pritisak, holesterol, artroza, alergije i astma mogu biti posledice konstantne dehidracije.<br>Savremeni čovek živi u iluziji da ne može da dehidrira jer mu je voda uvek pri ruci - dovoljno je da okrene slavinu. Međutim, zanemarivanje čiste vode i njena zamena tzv. "tečnostima", kako mi volimo da nazivamo kafu, alkohol, razne "kole" i sokove, neumitno vodi dehidraciji, jer pomenuti napici ne mogu da zamene čistu vodu u organizmu. A njihovo stalno konzumiranje, nažalost, na kraju dovodi i do gubitka osećaja za žeđ, i do toga da čovek zameni osećaj žedji sa osećajem gladi, pa jede, umesto da pije vodu - što je pogubno po organizam.<br><br> Da bismo izbegli ove nevolje, potrebno je da ustanovimo svesnu disciplinu da pijemo 2 litra ili 8 običnih čaša vode dnevno, čak i ako mislimo da nismo žedni.<br><br>
+                <div class="a"><span style="color:#f25f12" style="font-size: 30px"><strong>VODA I NJENA VAZNOST</strong></span><br><br> Postoji jedna namirnica koju mi uzimamo zdravo za gotovo, ali čija važnost nadilazi važnost svih drugih. To je obična, čista voda, koju neki prezrivo nazivaju "česmovača". Ali, imajte u vidu da čovek može da gladuje 40 dana, pa je čak bilo eksperimenata i sa 100 dana gladovanja, ali bez vode ne može da izdrži ni 10 dana.<br><br> <img class="pocetna" src="img/voda1.jpg" alt="">Nedovoljno unošenje vode postepeno i neprimetno menja fiziologiju organizma i dovodi do niza hroničnih degenerativnih promena tkiva i organa. Verovali ili ne, ali čak i takve bolesti kao što su čir na želucu, visok pritisak, holesterol, artroza, alergije i astma mogu biti posledice konstantne dehidracije.<br>Savremeni čovek živi u iluziji da ne može da dehidrira jer mu je voda uvek pri ruci - dovoljno je da okrene slavinu. Međutim, zanemarivanje čiste vode i njena zamena tzv. "tečnostima", kako mi volimo da nazivamo kafu, alkohol, razne "kole" i sokove, neumitno vodi dehidraciji, jer pomenuti napici ne mogu da zamene čistu vodu u organizmu. A njihovo stalno konzumiranje, nažalost, na kraju dovodi i do gubitka osećaja za žeđ, i do toga da čovek zameni osećaj žedji sa osećajem gladi, pa jede, umesto da pije vodu - što je pogubno po organizam.<br><br> Da bismo izbegli ove nevolje, potrebno je da ustanovimo svesnu disciplinu da pijemo 2 litra ili 8 običnih čaša vode dnevno, čak i ako mislimo da nismo žedni.<br><br>
                     <span style="color:#f25f12" style="font-size:30px"><strong>Kakvu vodu pijemo?</strong></span><br><br> Naravno, čista izvorska voda bi bila najbolji izbor - kad bi nam bila dostupna. Na nesreću, u savremenim uslovima života ona to nije. Flaširana voda, čak i ako potiče iz najčistijih izvora, ima veštački ukus, koji joj daje sama ambalaža. Sa tim ukusom u nju, nažalost, dospevaju i makromolekuli plastike, što nije zdravo. Zato preporučujem da ipak koristite vodu iz česme, ali filtriranu ili struktuiranu na takav način da je to čini znatno zdravijom. Jedan od načina struktuiranja je zaleđivanje i ponovno odleđivanje, uz odlivanje određene porcije vode u kojoj su se zadržale štetne materije.
                     <br><br> Drugi način, koji možda više odgovara mentalitetu savremenog čoveka koji nema uvek vremena da sprovodi dugotrajnije procedure, jeste se koriste impulsni magnetizatori, koji se jednostavno postave na slavinu i strukturišu vodu na isti način kao da je bila zaleđena i ponovo odleđena. Jedan od proverenih je Ojas polarizator vode švajcarske firme Sovana, i veoma je zadovoljavajuć, jer menja i kvalitet i ukus obične vode iz česme - naravno, nabolje.
                     <br><br>
                     <span style="color:#f25f12" style="font-size:30px"><strong>Hrana sa visokim sadržajem vode i njena važnost !</strong></span><br><br> Za optimalno funkcionisanje organizma neophodno je pravilno uzimanje tečnosti, posebno vode i osvežavajučih napitaka. Poznato je da je prisutnost vode na našoj planeti preko 70% i da je čovekov organizam takođe sačinjen od 70% vode. Da bismo održali svoje zdravlje, logično je da treba da uzimamo namirnice koje u sebi takođe sadrže veliki procenat vode (70%), a to su voće i povrće. Naučno je dokazano da je čovek kao biće plodojed i biljojed i da mu ni organi za preradu (vilica), a ni organi za varenje (želudac i creva) nisu predviđeni za konzumiranje mesa i mesnih prerađevina. Normalnom zdravom organizmu odraslog čoveka potrebno je 2,5 kg biljne hrane dnevno.
-                    <br><br><img class="pocetna2" src="img/voda2.jpg" alt=""> Što se tiče samog unošenja vode u organizam, dnevno je čoveku potrebno 35 grama vode na kilogram težine. Vodu treba uzimati između obroka, a ako je neophodno, posle, a ne pre i u toku jela. Uzimanje vode u toku jela slabi naš organizam i razređuje želudačnu kiselinu neophodnu za pravilno varenje hrane. Međutim, ukoliko u toku dana uzmete dovoljnu količinu hrane sa visokim sastavom vode, pijaća voda i napitci vam neće biti neophodni u većim količinama. Kroz bubrege odrastao čovek izluči 2,2 L vode dnevno. Za regulaciju vode u organizmu važno je uzimati dovoljnu količinu soli, jer so vezuje vodu u organizmu. Odraslom čoveku prosečne težine neophodno je da sa hranom unese 3,5 g soli dnevno.
+                    <br><br><img class="pocetna" src="img/voda2.jpg" alt=""> Što se tiče samog unošenja vode u organizam, dnevno je čoveku potrebno 35 grama vode na kilogram težine. Vodu treba uzimati između obroka, a ako je neophodno, posle, a ne pre i u toku jela. Uzimanje vode u toku jela slabi naš organizam i razređuje želudačnu kiselinu neophodnu za pravilno varenje hrane. Međutim, ukoliko u toku dana uzmete dovoljnu količinu hrane sa visokim sastavom vode, pijaća voda i napitci vam neće biti neophodni u većim količinama. Kroz bubrege odrastao čovek izluči 2,2 L vode dnevno. Za regulaciju vode u organizmu važno je uzimati dovoljnu količinu soli, jer so vezuje vodu u organizmu. Odraslom čoveku prosečne težine neophodno je da sa hranom unese 3,5 g soli dnevno.
                     <br><br> Pravilna i zdrava ishrana podrazumeva ograničeno, a po mogućnosti i potpuno odricanje od napitaka kao što su kafa, jaki čajevi, alkoholna pića, kao i vrlo retko uzimanje mleka, čokolade, sladoleda i slatkiša. Ukoliko se pije kafa, treba je piti isključivo posle podne, čajevi treba da budu biljni, a mleko, čokoladu, sladoled i slatkiše uzimati na prazan želudac. Vede (staroindijski sveti spisi) kažu: "Hrana je dah koji izdišemo; hrana je dah života koji udišemo". Zato su odnos i stav prema hrani i svest o neodvojivosti hrane od nas samih veoma važni. Način razmišljanja i svest da u svoj organizam unosimo život, energiju, vitalnost i pozitivne vibracije, opredeliće i naš izbor namirnica. Verovanje da smo zdravi, svesno izbegavanje stresa i uživanje u hrani, bitno utiču na celokupno zdravlje. Poštovanje hrane i obavljanje molitve ili meditacije pred svaki obrok pomoći će da se uravnoteže naše fizičke, emocionalne, mentalne i duhovne dimenzije. Estetsko serviranje hrane i prijatan ambijent takođe puno doprinose ukupnom pozitivnom efektu koji hrana ima u našem životu.
                     <br><br>
                 </div>
             </div>
 
-            <div id="background">
-                <div id="footer">
-                    <p class="footer-text">
-                        Postanite deo nas i naseg sajta, postavite nam pitanje ili sugestije i mi cemo rado odgovoriti.
-                        <br><br>Sva prava su zadrzana</p>
-                    <div class="wrapper2">
-                        <p class="footer-text2">Pratite nas</p>
-                        <a href="#"><i class="ion-social-facebook"></i></a>
-                        <a href="#"><i class="ion-social-googleplus"></i></a>
-                        <a href="#"><i class="ion-social-twitter"></i></a>
-                        <a href="#"><i class="ion-social-instagram"></i></a>
-                        <a href="#"><i class="ion-social-youtube"></i></a>
-                        <a href="#"><i class="ion-social-linkedin"></i></a>
+            <h2 class="card-h2">Nasi saradnici</h2>
+
+            <div class="card-container">
+                <div class="card">
+                    <img src="img/card-img1.jpeg" alt="" style="width:100%">
+                    <h1>Dusan Petrovic</h1>
+                    <p class="title">Dr.Mr Nutricionista</p>
+                    <p>VMA</p>
+                    <div class="card-social">
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
                     </div>
-                    <section class="section-form">
-                        <div class="row">
-                            <h2>Postavite nam pitanje</h2>
-                        </div>
-                        <div class="row">
-                            <form method="post" action="#" class="contact-form">
-                                <div class="row">
-                                    <div class="col span-1-of-3">
-                                        <label for="name">Ime</label>
-                                    </div>
-                                    <div class="col span-2-of-3">
-                                        <input type="text" name="name" id="name" placeholder="Vase Ime" required>
-                                    </div>
+                    <p><button class="card-btn">Kontakt</button></p>
+                </div>
+                <div class="card">
+                    <img src="img/card-img2.jpeg" alt="" style="width:100%">
+                    <h1>Nikola Delibasic</h1>
+                    <p class="title">Fiziolog</p>
+                    <p>VMA</p>
+                    <div class="card-social">
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </div>
+                    <p><button class="card-btn">Kontakt</button></p>
+                </div>
+                <div class="card">
+                    <img src="img/card-img3.jpeg" alt="" style="width:100%">
+                    <h1>Nevena Obradovic</h1>
+                    <p class="title">Life Couch</p>
+                    <p>VMA</p>
+                    <div class="card-social">
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </div>
+                    <p><button class="card-btn">Kontakt</button></p>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="sponsor-line">
+                <a href="#"><img class="sponzor" src="img/sponsor1.jpg" alt=""></a>
+                <a href="#"><img class="sponzor2" src="img/sponsor2.jpg" alt=""></a>
+                <a href="#"><img class="sponzor3" src="img/sponsor3.jpg" alt=""></a>
+                <a href="#"><img class="sponzor4" src="img/sponsor4.jpg" alt=""></a>
+            </div>
+            <div class="contact">
+                <section class="section-form">
+                    <div class="row">
+                        <h2>Postavite nam pitanje</h2>
+                    </div>
+                    <div class="row">
+                        <form method="post" action="#" class="contact-form">
+                            <div class="row">
+                                <div class="col span-1-of-3">
+                                    <label for="name">Ime</label>
                                 </div>
-                                <div class="row">
-                                    <div class="col span-1-of-3">
-                                        <label for="email">Email</label>
-                                    </div>
-                                    <div class="col span-2-of-3">
-                                        <input type="email" name="email" id="email" placeholder="Vasa email adresa" required>
-                                    </div>
+                                <div class="col span-2-of-3">
+                                    <input type="text" name="name" id="name" placeholder="Vase Ime" required>
                                 </div>
-                                <div class="row">
-                                    <div class="col span-1-of-3">
-                                        <label for="find-us">Kako ste saznali za nas?</label>
-                                    </div>
-                                    <div class="col span-2-of-3">
-                                        <select name="find-us" id="find-us">
+                            </div>
+                            <div class="row">
+                                <div class="col span-1-of-3">
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class="col span-2-of-3">
+                                    <input type="email" name="email" id="email" placeholder="Vasa email adresa" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col span-1-of-3">
+                                    <label for="find-us">Kako ste saznali za nas?</label>
+                                </div>
+                                <div class="col span-2-of-3">
+                                    <select name="find-us" id="find-us">
                                 <option value="friends" selected>Prijatelj</option>
                                 <option value="search">Search potraga</option>
                                 <option value="ad">Reklamiranje</option>
                                 <option value="other">Ostalo</option>
-                            </select>
-                                    </div>
+                                    </select>
                                 </div>
-                                <div class="row">
-                                    <div class="col span-1-of-3">
-                                        <label>Nove vesti?</label>
-                                    </div>
-                                    <div class="col span-2-of-3">
-                                        <input type="checkbox" name="news" id="news" checked> Da, molim
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col span-1-of-3">
+                                    <label>Nove vesti?</label>
                                 </div>
-                                <div class="row">
-                                    <div class="col span-1-of-3">
-                                        <label>Vasa poruka</label>
-                                    </div>
-                                    <div class="col span-2-of-3">
-                                        <textarea name="message" placeholder=""></textarea>
-                                    </div>
+                                <div class="col span-2-of-3">
+                                    <input type="checkbox" name="news" id="news" checked> Da, molim
                                 </div>
-                                <div class="row">
-                                    <div class="col span-1-of-3">
-                                        <label>&nbsp;</label>
-                                    </div>
-                                    <div class="col span-2-of-3">
-                                        <input type="submit" value="Posalji!">
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col span-1-of-3">
+                                    <label>Vasa poruka</label>
                                 </div>
-                            </form>
-                        </div>
-                    </section>
+                                <div class="col span-2-of-3">
+                                    <textarea name="message" placeholder=""></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col span-1-of-3">
+                                    <label>&nbsp;</label>
+                                </div>
+                                <div class="col span-2-of-3">
+                                    <input class="send-btn" type="submit" value="Posalji!">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+            <div id="footer">
+
+                <div class="wrapper2">
+                    <p class="footer-text2">Pratite nas</p>
+                    <a href="#"><i class="ion-social-facebook"></i></a>
+                    <a href="#"><i class="ion-social-googleplus"></i></a>
+                    <a href="#"><i class="ion-social-twitter"></i></a>
+                    <a href="#"><i class="ion-social-instagram"></i></a>
+                    <a href="#"><i class="ion-social-youtube"></i></a>
+                    <a href="#"><i class="ion-social-linkedin"></i></a>
                 </div>
-                <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            </div>
+            <p class="footer-text">
+                <br>Sva prava su zadrzana</p>
+        </div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    </div>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        jssor_1_slider_init();
+    </script>
+
 </body>
 
 </html>

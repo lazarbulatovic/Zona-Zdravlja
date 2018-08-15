@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 
 <head>
     <meta lang="en">
@@ -20,178 +21,393 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <script src="js/jssor.slider-27.4.0.min.js" type="text/javascript"></script>
 
 </head>
+
+
+
+
+
+
+<script type="text/javascript">
+    jssor_1_slider_init = function() {
+
+        var jssor_1_SlideoTransitions = [
+            [{
+                b: -1,
+                d: 1,
+                o: -0.7
+            }],
+            [{
+                b: 900,
+                d: 2000,
+                x: -379,
+                e: {
+                    x: 7
+                }
+            }],
+            [{
+                b: 900,
+                d: 2000,
+                x: -379,
+                e: {
+                    x: 7
+                }
+            }],
+            [{
+                b: -1,
+                d: 1,
+                o: -1,
+                sX: 2,
+                sY: 2
+            }, {
+                b: 0,
+                d: 900,
+                x: -171,
+                y: -341,
+                o: 1,
+                sX: -2,
+                sY: -2,
+                e: {
+                    x: 3,
+                    y: 3,
+                    sX: 3,
+                    sY: 3
+                }
+            }, {
+                b: 900,
+                d: 1600,
+                x: -283,
+                o: -1,
+                e: {
+                    x: 16
+                }
+            }]
+        ];
+
+        var jssor_1_options = {
+            $AutoPlay: 1,
+            $SlideDuration: 800,
+            $SlideEasing: $Jease$.$OutQuint,
+            $CaptionSliderOptions: {
+                $Class: $JssorCaptionSlideo$,
+                $Transitions: jssor_1_SlideoTransitions
+            },
+            $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+            },
+            $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+            }
+        };
+
+        var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+        /*#region responsive code begin*/
+
+        var MAX_WIDTH = 3000;
+
+        function ScaleSlider() {
+            var containerElement = jssor_1_slider.$Elmt.parentNode;
+            var containerWidth = containerElement.clientWidth;
+
+            if (containerWidth) {
+
+                var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                jssor_1_slider.$ScaleWidth(expectedWidth);
+            } else {
+                window.setTimeout(ScaleSlider, 30);
+            }
+        }
+
+        ScaleSlider();
+
+        $Jssor$.$AddEvent(window, "load", ScaleSlider);
+        $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+        $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+        /*#endregion responsive code end*/
+    };
+</script>
 
 <body>
     <div id="contrainer">
         <div id="wrapper">
+            <div class="top-head">
+                <img class="logo" src="img/logo.jpg" alt="Logo">
+                <div class="wrapper3">
+                    <a href="#"><i class="ion-social-facebook"></i></a>
+                    <a href="#"><i class="ion-social-googleplus"></i></a>
+                    <a href="#"><i class="ion-social-twitter"></i></a>
+                    <a href="#"><i class="ion-social-instagram"></i></a>
+                    <a href="#"><i class="ion-social-youtube"></i></a>
+                    <a href="#"><i class="ion-social-linkedin"></i></a>
+                </div>
+            </div>
             <div id="header">
-                <div class="background">
-                    <h1>Zona <br>Zdravlja</h1>
+                <div id="jssor_1">
+                    <!-- Loading Screen -->
+                    <div data-u="loading" class="jssorl-009-spin">
+                        <img src="img/spin.svg" />
+                    </div>
+                    <div class="slides" data-u="slides">
+                        <div>
+                            <img data-u="image" src="img/1.jpg" />
+                        </div>
+                        <div>
+                            <img data-u="image" src="img/4.jpg" />
+                        </div>
+                        <div>
+                            <img data-u="image" src="img/6.jpg" />
+                        </div>
+                        <div>
+                            <img data-u="image" src="img/2.jpeg" />
+                        </div>
+                        <div>
+                            <img data-u="image" src="img/3.png" />
+                        </div>
+                        <div>
+                            <img data-u="image" src="img/5.jpeg" />
+                        </div>
+                    </div>
+                    <!-- Bullet Navigator -->
+                    <div data-u="navigator" class="jssorb032" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                        <div data-u="prototype" class="i">
+                            <svg class="viewbox" viewbox="0 0 16000 16000">
+                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                </svg>
+                        </div>
+                    </div>
+                    <!-- Arrow Navigator -->
+                    <div data-u="arrowleft" class="jssora051" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                        <svg class="viewbox" viewbox="0 0 16000 16000">
+                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+                    </div>
+                    <div data-u="arrowright" id="jssora051" class="jssora051" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                        <svg class="viewbox" viewbox="0 0 16000 16000">
+                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+                    </div>
                 </div>
             </div>
             <div id="contrainer">
                 <nav id="primary_nav_wrap">
-                    <ul class="primary_nav_wrap js--main_nav">
+                    <ul class="primary_nav_wrap js--main-nav">
                         <li class="current-menu-item"><a href="Pocetna.html">Pocetna</a></li>
                         <li><a href="#">Pravilna Ishrana</a>
                             <ul>
                                 <li><a href="Osnovni Principi.html">Osnovni Principi</a></li>
                                 <li><a href="Sta je zdrav zivot.html">Sta je zdrav zivot?</a></li>
-                                <li><a href="Prirodni ciklusi.html">Prirodni ciklusi</a></li>
+                                <li><a href="Prirodni ciklusi.html">Prirodni ciklusi zivota</a></li>
                                 <li><a href="Voda.html">Voda i njena vaznost</a></li>
                             </ul>
-
-                            <li><a href="#">Recepti</a>
-                                <ul>
-                                    <li><a href="Mediteranski recepti.html">Mediteranski Recepti</a></li>
-                                    <li><a href="Vegeterijanski recepti.html">Vegeterijanski Recepti</a></li>
-                                    <li><a href="Recepti sa sojom.html">Recepti sa Sojom</a></li>
-                                </ul>
+                        </li>
+                        <li><a href="#">Recepti</a>
+                            <ul>
+                                <li><a href="Mediteranski recepti.html">Mediteranski Recepti</a></li>
+                                <li><a href="Vegeterijanski recepti.html">Vegeterijanski Recepti</a></li>
+                                <li><a href="Recepti sa sojom.html">Recepti sa Sojom</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Mrsavljenje</a>
+                            <ul>
+                                <li class="dir"><a href="Kako Mrsaviti.html">Kako Mrsaviti?</a></li>
+                                <li class="dir"><a href="Zasto angazovati nutricionistu.html">Zasto angazovati nutricionistu</a>
+                                    <li><a href="Mrsavljenje i fizicka aktivnost.html">Mrsavljenje i fizicka aktivnost</a></li>
+                                    <li><a href="Da li mrsavljenje uvek uspeva.html">Da li mrsavljenje uvek uspeva</a></li>
+                                    <li><a href="Mrsavljenje je proces.html">Mrsavljenje je proces</a></li>
+                                    <li><a href="Uticaj dijete na telo i duh.html">Uticaj dijete na telo i duh</a></li>
+                            </ul>
                             </li>
-                            <li><a href="#">Mrsavljenje</a>
-                                <ul>
-                                    <li class="dir"><a href="Kako Mrsaviti.html">Kako Mrsaviti?</a></li>
-                                    <li class="dir"><a href="Zasto angazovati nutricionistu.html">Zasto angazovati nutricionistu</a>
-                                        <li><a href="Mrsavljenje i fizicka aktivnost.html">Mrsavljenje i fizicka aktivnost</a></li>
-                                        <li><a href="Da li mrsavljenje uvek uspeva.html">Da li mrsavljenje uvek uspeva</a></li>
-                                        <li><a href="Mrsavljenje je proces.html">Mrsavljenje je proces</a></li>
-                                        <li><a href="Uticaj dijete na telo i duh.html">Uticaj dijete na telo i duh</a></li>
-                                </ul>
-                                </li>
-                                <li><a href="Vezbanje.html">Vezbanje</a></li>
-                                <li><a href="Video.html">Video</a></li>
-                                <li><a href="Literatura.html">Literatura</a></li>
+                            <li><a href="Vezbanje.html">Vezbanje</a></li>
+                            <li><a href="Video.html">Video</a></li>
+                            <li><a href="Literatura.html">Literatura</a></li>
                     </ul>
                 </nav>
-                <a class="mobile_nav_icon js--nav_icon"><i class="ion-close"></i> </a>
+                <a class="mobile_nav_icon js--nav_icon"><i class="ion-navicon-round"></i></a>
 
             </div>
+
+
             <div id="contrainer">
-                <div class="right">
-                    <a href="https://www.youtube.com/?hl=sr&gl=RS"><img class="sponzor" src="img/sponsors_icon.jpg" alt=""></a>
-                    <a href="https://www.youtube.com/?hl=sr&gl=RS"><img class="sponzor2" src="img/sponsors_icon.jpg" alt=""></a>
-                    <a href="https://www.youtube.com/?hl=sr&gl=RS"><img class="sponzor3" src="img/sponsors_icon.jpg" alt=""></a>
-                    <a href="https://www.youtube.com/?hl=sr&gl=RS"><img class="sponzor4" src="img/sponsors_icon.jpg" alt=""></a>
-                </div>
-
-
-
                 <div class="a"><span style="color:#f25f12" style="font-size:30px"><strong>VEGETIRAJNSKI RECEPTI</strong></span><br><br><br>
                     <span style="color:#f25f12" style="font-size: 30px"><strong>Dzem od ananasa i papricica</strong></span><br><br>
-                    <img class="pocetna2" src="img/ananasdzem.jpg" alt=""> Približava se vreme džemova. A ovaj je neobični džem, koji se slaže i sa slanim jelima, svakako vredi probati. Potrebno je: 1 ananas, šolja soka od ananasa, 1-3 ljute papričice.<br> PRIPREMA:
+                    <img class="pocetna" src="img/ananasdzem.jpg" alt=""> Približava se vreme džemova. A ovaj je neobični džem, koji se slaže i sa slanim jelima, svakako vredi probati. Potrebno je: 1 ananas, šolja soka od ananasa, 1-3 ljute papričice.<br> PRIPREMA:
                     <br> Odsecite vrh ananasa, a zatim oštrim nožem odstranite koru. Secite dovoljno debelo da sa korom odstranite i braon okca. Ako neko okce preostane, isecite ga posebno oštrim nožem. Isecite ananas na kolutove sve sa jezgrom, a potom kolutove iseckajte na sitnije komadiće. Naspite seckani ananas i sok od ananasa u lonac. Odsecite peteljku papričicama, pa ih grubo iseckajte, sve sa semenkama, i ubacite u lonac sa ananasom. Zagrejte lonac da proključa, onda smanjite vatru i ostavite da lagano ključa, često mešajući, dok ananas ne omekša. Štapnim blenderom izmiksajte mešavinu ananasa i paprike. Ne morate da napravite potpuno homogenu masu, samo se postarajte da svi veliki komadi budu izmiksani. Kuvajte još oko 20 minuta dok se ne zgusne. Često mešajte, da džem ne zagori. Kašikom prespite džem u čistu teglu i ostavite da se ohladi na sobnoj temperaturi. Potom zavrnite poklopac i ostavite u frižider. Džem bi trebalo da stoji u frižideru bar 10 dana da dobije pravi ukus.<br><br>
 
                     <span style="color:#f25f12" style="font-size: 30px"><strong>Kukuruzni djuvec</strong></span><br><br>
-                    <img class="pocetna2" src="img/kukuruzdjuvec.jpg" alt=""> Izvrsno jelo za porodični ručak. Potrebno je: 1/2 šolje putera, 1/4 šolje brašna, 2 jajeta, šolja mleka, 1/4 šolje kokosovog šećera, 1/2 kilograma zrna kukuruza (recimo, šećerca ili nekog drugog), so i biber.<br> PRIPREMA:
+                    <img class="pocetna" src="img/kukuruzdjuvec.jpg" alt=""> Izvrsno jelo za porodični ručak. Potrebno je: 1/2 šolje putera, 1/4 šolje brašna, 2 jajeta, šolja mleka, 1/4 šolje kokosovog šećera, 1/2 kilograma zrna kukuruza (recimo, šećerca ili nekog drugog), so i biber.<br> PRIPREMA:
                     <br> Zagrejati rernu na 175 stepeni. U međuvremenu, istopiti puter pa ga ohladiti. Zrna kukuruza dobro oprati pa ocediti. Jaja umutiti. U većoj činiji, umešati brašno u puter dok se dobro ne pomešaju. Zatim u tu mešavinu umešati šećer, jaja i mleko. Potom u činiju usuti kukuruz, sve dobro promešati, pa posoliti i pobiberiti. Masu ravnomerno rasporediti u pleh za đuveč. Peći oko sat vremena dok se sredina ne slegne i dok na vrhu kukuruz ne karamelizuje i ne dobije braonkastu nijansu. Poslužiti toplo.<br><br>
 
                     <span style="color:#f25f12" style="font-size: 30px"><strong>Hladna kapreze supa</strong></span><br><br>
-                    <img class="pocetna2" src="img/kaprezesupa.jpg" alt=""> Izuzetan letnji obrok. Potrebno vam je: 3 šolje kockica prepečenog hleba (krutona), 1,5 kg paradajza, kašika crvenog vinskog sirćeta, 2 češnja belog luka, 1/4 šolje ekstra devičanskog maslinovog ulja,1/4 šolje svežih listova bosiljka (ili upola manje suvih), 100g mocarela sira, 1/4 šolje krastavca iseckanog na kockice, 1/4 šolje sitno seckane zelena paprike.<br> PRIPREMA:
+                    <img class="pocetna" src="img/kaprezesupa.jpg" alt=""> Izuzetan letnji obrok. Potrebno vam je: 3 šolje kockica prepečenog hleba (krutona), 1,5 kg paradajza, kašika crvenog vinskog sirćeta, 2 češnja belog luka, 1/4 šolje ekstra devičanskog maslinovog ulja,1/4 šolje svežih listova bosiljka (ili upola manje suvih), 100g mocarela sira, 1/4 šolje krastavca iseckanog na kockice, 1/4 šolje sitno seckane zelena paprike.<br> PRIPREMA:
                     <br> Zagrejte rernu na 160 stepeni. U srednjoj činiji, u šolju tople vode potopite jednu i po šolju kockica prepečenog hleba (polovinu količine). Drugu polovinu kockica prepržite u rerni dok ne dobiju zlatastu boju. Izručite namočene kockice hleba iz činije, pritisnite ih nečim da iscedite višak vode i ubacite u blender. Dodajte paradajz iseckan na kriške, čen belog luka, malo soli i bibera. Meljite dok ne dobijete gotovo kremastu masu. Ostavite u frižider da se ohladi, oko 2 sata. U međuvremenu, presom za beli luk istisnite preostali čen luka u srednju činiju. Dospite maslinovo ulje, bosiljak i dodajte malo soli. Zatim dodajte u činiju tostirane kockice hleba i dobro sve promešajte. Potom dodajte mocarelu, seckani krastavac i zelenu papriku i opet sve dobro izmešajte. Izvadite ohlađenu supu iz frižidera, naspite u činije za serviranje i u svaku činiju naspite deo mešavine mocarele i kockica hleba koju ste upravo napravili. Kapreze supa je spremna! <br><br>
 
                     <span style="color:#f25f12" style="font-size: 30px"><strong>Krem supa od celera</strong></span><br><br>
-                    <img class="pocetna2" src="img/kremsupcel.jpg" alt=""> Za 4 porcije, potrebno je: ¼ paklice putera, šolja seckanog crnog luka, 2 šolje sitno seckanih stabljika celera, veliki čen velog luka, sitno iseckan, 1/3 šolje brašna, 1,5 šolja vode, 1,5 šolje punomasnog mleka, ½ kašičice smeđeg šećera, soli i bibera po ukusu.<br> PRIPREMA:
+                    <img class="pocetna" src="img/kremsupcel.jpg" alt=""> Za 4 porcije, potrebno je: ¼ paklice putera, šolja seckanog crnog luka, 2 šolje sitno seckanih stabljika celera, veliki čen velog luka, sitno iseckan, 1/3 šolje brašna, 1,5 šolja vode, 1,5 šolje punomasnog mleka, ½ kašičice smeđeg šećera, soli i bibera po ukusu.<br> PRIPREMA:
                     <br> U šerpi rastopite puter na srednjoj vatri i na njemu krčkajte seckani celer, luk i beli luk dok ne postanu providni, 5-7 minuta. Dospite brašno i krčkajte još minut. Dospite vodu i mleko, pa mešajte sve dok ne dobijete glatku mešavinu. Pojačajte vatru dok mešavina ne počne da ključa, pa smanjite vatru na srednju. Dodajte šećer, so i biber pa ostavite sve da se krčka, otklopljeno, još 15 minuta. Poslužite toplo. (Ako je ne potrošite odmah, ova supa može da stoji u frižideru do 3 dana.)<br><br>
 
                     <span style="color:#f25f12" style="font-size: 30px"><strong>Sladoled od krastavca i maline</strong></span><br><br>
-                    <img class="pocetna2" src="img/sladolkrastavac.jpg" alt=""> Koje nam jelo izgleda najinteresantnije po ovoj vrućini? Verovatno sladoled. Kupovni sladoledi ne spadaju baš u zdravu hranu. Zato možemo da napravimo ovaj domaći, neobičan i veoma osvežavajući. (Ako nemate maline, poslužiće i neko drugo voće.) Potrebno je: 1 veliki krastavac, limun, 16 malina, 1-2 kašike agave sirupa.<br> PRIPREMA:
+                    <img class="pocetna" src="img/sladolkrastavac.jpg" alt=""> Koje nam jelo izgleda najinteresantnije po ovoj vrućini? Verovatno sladoled. Kupovni sladoledi ne spadaju baš u zdravu hranu. Zato možemo da napravimo ovaj domaći, neobičan i veoma osvežavajući. (Ako nemate maline, poslužiće i neko drugo voće.) Potrebno je: 1 veliki krastavac, limun, 16 malina, 1-2 kašike agave sirupa.<br> PRIPREMA:
                     <br> U jači blender ubacite krastavac i limun. (Ukoliko nisu organski, onda im oljuštite koru. A ukoliko možete da nabavite organske, onda ih sameljite cele - naravno, nakon što ih dobro operete). Meljite dok ne dobijete kašastu masu. Dodajte kašičicu ili dve agave sirupa, po ukusu. Potom naspite dobijeni sok u modle za sladoled do četvrtine. Ostavite u zamrzivač 20 minuta, izvadite, promešajte, ostavite još 20 minuta u zamrzivaču. Opet izvadite i promešajte. Dodajte maline (ili drugo voće po izvoru), pa dospite sok od krastavca i limuna do polovine. Ponovite ovo još dvaput dok ne napunite modle (tako da voće ostane u sredini sladoleda). Stavite drveni štapić u svaku modlu, pa ubacite u zamrzivač dok se potpuno ne sledi, oko 3 sata. Da izvadite sladoled, stavite modle nakratko u toplu vodu da se po površini sladoled malo odmrzne, pa izvucite sladoled na štapiću.<br><br>
 
                     <span style="color:#f25f12" style="font-size: 30px"><strong>Prženice sa akvafabom</strong></span><br><br>
-                    <img class="pocetna2" src="img/akvaprzenice.jpg" alt=""> Kao što smo obećali, objavljujemo recept sa akvafabom (veganskom zamenom za jaja). Evo kako da napravite slatke francuske prženice – ali bez jaja i kravljeg mleka. Potrebno vam je: ½ šolje akvafabe, ½ šolje sojinog mleka, 2 kašičice kokosovog šećera, 1 kašičica ekstrakta vanile, 6-8 kriški hleba.<br> PRIPREMA:
+                    <img class="pocetna" src="img/akvaprzenice.jpg" alt=""> Kao što smo obećali, objavljujemo recept sa akvafabom (veganskom zamenom za jaja). Evo kako da napravite slatke francuske prženice – ali bez jaja i kravljeg mleka. Potrebno vam je: ½ šolje akvafabe, ½ šolje sojinog mleka, 2 kašičice kokosovog šećera, 1 kašičica ekstrakta vanile, 6-8 kriški hleba.<br> PRIPREMA:
                     <br> Pomešajte akvafabu, sojino mleko, šećer i vanilu u velikoj činiji. Izmutite mikserom dok ne dobijete penastu mešavinu. Prespite mešavinu u plitak tanjih. Naspite malo ulja u tiganj, pa ga zagrejte tiganj kao i obično kad pravite prženice. Natopite svaki komad hleba u mešavinu akvafabe, pustite da se višak ocedi, pa ubacite u tiganj. Pecite dok prženica ne počne blago da se puši, pa okrenite hleb na drugu stranu. Ponovite ovo i više puta ako treba, dok prženice na postanu zlatnobraon. Ovo je francuski način spremanja prženica, pa ih zato poslužite sa javorovim sirupom, malo šećera u prahu, bobičavim voćem (borovnice, kupine), seckanim bananama ili nekim voćem koje volite.<br><br>
 
                     <span style="color:#f25f12" style="font-size: 30px"><strong>Hladna supa od krastavaca</strong></span><br><br>
-                    <img class="pocetna2" src="img/krastavacsupa.jpg" alt=""> Vrućine opet dolaze, tako da će ovo prijati. Potrebno je: 2 krastavca, čen belog luka, 5 dl punomasnog jogurta,pola šolje punomasnog mleka, sok od pola limuna, kašičica soli. Za kari ulje, potrebno je: 2 kašike maslinovog ulja, ½ kašičice kari začina, ½ kašičice mlevenog kumina, ¼ kašičice aleve paprike. Za garnir, potrebno je: mali paradajz iseckan na komadiće, kašika seckanih svežih listova nane.<br> PRIPREMA:
+                    <img class="pocetna" src="img/krastavacsupa.jpg" alt=""> Vrućine opet dolaze, tako da će ovo prijati. Potrebno je: 2 krastavca, čen belog luka, 5 dl punomasnog jogurta,pola šolje punomasnog mleka, sok od pola limuna, kašičica soli. Za kari ulje, potrebno je: 2 kašike maslinovog ulja, ½ kašičice kari začina, ½ kašičice mlevenog kumina, ¼ kašičice aleve paprike. Za garnir, potrebno je: mali paradajz iseckan na komadiće, kašika seckanih svežih listova nane.<br> PRIPREMA:
                     <br> Iseckajte krastavac na kockice veličine 2 cm, da napunite pola šolje i to odvojite za garnir. Ostatak krastavca iseckajte na komadiće. U secko za hranu, ili blender, uspite jogurt, mleko, dodajte komadiće krastavca, limun i so. Meljite dok ne dobijete gotovo glatku masu. Prespite to u činiju srednje veličine, poklopite i ostavite u frižider 2 sata da se ohladi. U međuvremenu, napravite kari ulje. U tiganj naspite maslinovo ulje, kari, kumin i alevu papriku. Na slaboj vatri krčkajte dok se ulje na zagreje i začini ne počnu da mirišu, oko 3 minuta. Skinite tiganj sa vatre. Procedite ulje kroz cediljku u šolju. U maloj činiji, pomešajte paradajz iseckan na kockice i kockice paradajza koje ste ostavili. Izvadite hladnu supu iz frižidera, promešajte je i naspite u manje činije. Umešajte u svaku činijicu kašikom malo seckanog krastavca. Pospite svaku činijicu listićima nane i kari uljem.<br><br>
 
                     <span style="color:#f25f12" style="font-size: 30px"><strong>Sladoled zeleni smuti</strong></span><br><br>
-                    <img class="pocetna2" src="img/smutisladoled.jpg" alt=""> Možda će vam izgledati neobičan sladoled od voća, spanaća i đumbira, ali je veoma osvežavajući i zdrav! Potrebno je: šolja mleka, šolja svežeg ili smrznutog spanaća, 1/4 šolje seckanog peršuna,1 banana, 2 kivija, 2 kašike meda, 1 kašika rendanog đumbira. Potrebni isu vam i plastični kalupi za sladoled (oblika sladoleda na štapiću) i drveni štapići.<br> PRIPREMA:
+                    <img class="pocetna" src="img/smutisladoled.jpg" alt=""> Možda će vam izgledati neobičan sladoled od voća, spanaća i đumbira, ali je veoma osvežavajući i zdrav! Potrebno je: šolja mleka, šolja svežeg ili smrznutog spanaća, 1/4 šolje seckanog peršuna,1 banana, 2 kivija, 2 kašike meda, 1 kašika rendanog đumbira. Potrebni isu vam i plastični kalupi za sladoled (oblika sladoleda na štapiću) i drveni štapići.<br> PRIPREMA:
                     <br> U blenderu meljite spanać, mleko i peršun dok ne dobijete glatku masu. Dodajte oljluštenu bananu i jedan kivi, med i đumbir. Meljite dok ne dobijete glatku masu - zeleni smuti. Oljuštite drugi kivi, pa ga isecite na kolutove i u svaki kalup za sladoled dodajte jedan ili dva koluta. Naspite zeleni smuti u kalupe i ostavite u zamrzivaču dok se ne zamrzne (otprilike 6 sati). Da biste izvadili sladolede iz kalupa, potopite na nekoliko sekundi plastični kalup u toplu vodu.<br><br>
 
                 </div>
             </div>
 
-            <div id="background">
-                <div id="footer">
-                    <p class="footer-text">
-                        Postanite deo nas i naseg sajta, postavite nam pitanje ili sugestije i mi cemo rado odgovoriti.
-                        <br><br>Sva prava su zadrzana</p>
-                    <div class="wrapper2">
-                        <p class="footer-text2">Pratite nas</p>
-                        <a href="#"><i class="ion-social-facebook"></i></a>
-                        <a href="#"><i class="ion-social-googleplus"></i></a>
-                        <a href="#"><i class="ion-social-twitter"></i></a>
-                        <a href="#"><i class="ion-social-instagram"></i></a>
-                        <a href="#"><i class="ion-social-youtube"></i></a>
-                        <a href="#"><i class="ion-social-linkedin"></i></a>
+            <h2 class="card-h2">Nasi saradnici</h2>
+
+            <div class="card-container">
+                <div class="card">
+                    <img src="img/card-img1.jpeg" alt="" style="width:100%">
+                    <h1>Dusan Petrovic</h1>
+                    <p class="title">Dr.Mr Nutricionista</p>
+                    <p>VMA</p>
+                    <div class="card-social">
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
                     </div>
-                    <section class="section-form">
-                        <div class="row">
-                            <h2>Postavite nam pitanje</h2>
-                        </div>
-                        <div class="row">
-                            <form method="post" action="#" class="contact-form">
-                                <div class="row">
-                                    <div class="col span-1-of-3">
-                                        <label for="name">Ime</label>
-                                    </div>
-                                    <div class="col span-2-of-3">
-                                        <input type="text" name="name" id="name" placeholder="Vase Ime" required>
-                                    </div>
+                    <p><button class="card-btn">Kontakt</button></p>
+                </div>
+                <div class="card">
+                    <img src="img/card-img2.jpeg" alt="" style="width:100%">
+                    <h1>Nikola Delibasic</h1>
+                    <p class="title">Fiziolog</p>
+                    <p>VMA</p>
+                    <div class="card-social">
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </div>
+                    <p><button class="card-btn">Kontakt</button></p>
+                </div>
+                <div class="card">
+                    <img src="img/card-img3.jpeg" alt="" style="width:100%">
+                    <h1>Nevena Obradovic</h1>
+                    <p class="title">Life Couch</p>
+                    <p>VMA</p>
+                    <div class="card-social">
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </div>
+                    <p><button class="card-btn">Kontakt</button></p>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="sponsor-line">
+                <a href="#"><img class="sponzor" src="img/sponsor1.jpg" alt=""></a>
+                <a href="#"><img class="sponzor2" src="img/sponsor2.jpg" alt=""></a>
+                <a href="#"><img class="sponzor3" src="img/sponsor3.jpg" alt=""></a>
+                <a href="#"><img class="sponzor4" src="img/sponsor4.jpg" alt=""></a>
+            </div>
+            <div class="contact">
+                <section class="section-form">
+                    <div class="row">
+                        <h2>Postavite nam pitanje</h2>
+                    </div>
+                    <div class="row">
+                        <form method="post" action="#" class="contact-form">
+                            <div class="row">
+                                <div class="col span-1-of-3">
+                                    <label for="name">Ime</label>
                                 </div>
-                                <div class="row">
-                                    <div class="col span-1-of-3">
-                                        <label for="email">Email</label>
-                                    </div>
-                                    <div class="col span-2-of-3">
-                                        <input type="email" name="email" id="email" placeholder="Vasa email adresa" required>
-                                    </div>
+                                <div class="col span-2-of-3">
+                                    <input type="text" name="name" id="name" placeholder="Vase Ime" required>
                                 </div>
-                                <div class="row">
-                                    <div class="col span-1-of-3">
-                                        <label for="find-us">Kako ste saznali za nas?</label>
-                                    </div>
-                                    <div class="col span-2-of-3">
-                                        <select name="find-us" id="find-us">
+                            </div>
+                            <div class="row">
+                                <div class="col span-1-of-3">
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class="col span-2-of-3">
+                                    <input type="email" name="email" id="email" placeholder="Vasa email adresa" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col span-1-of-3">
+                                    <label for="find-us">Kako ste saznali za nas?</label>
+                                </div>
+                                <div class="col span-2-of-3">
+                                    <select name="find-us" id="find-us">
                                 <option value="friends" selected>Prijatelj</option>
                                 <option value="search">Search potraga</option>
                                 <option value="ad">Reklamiranje</option>
                                 <option value="other">Ostalo</option>
-                            </select>
-                                    </div>
+                                    </select>
                                 </div>
-                                <div class="row">
-                                    <div class="col span-1-of-3">
-                                        <label>Nove vesti?</label>
-                                    </div>
-                                    <div class="col span-2-of-3">
-                                        <input type="checkbox" name="news" id="news" checked> Da, molim
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col span-1-of-3">
+                                    <label>Nove vesti?</label>
                                 </div>
-                                <div class="row">
-                                    <div class="col span-1-of-3">
-                                        <label>Vasa poruka</label>
-                                    </div>
-                                    <div class="col span-2-of-3">
-                                        <textarea name="message" placeholder=""></textarea>
-                                    </div>
+                                <div class="col span-2-of-3">
+                                    <input type="checkbox" name="news" id="news" checked> Da, molim
                                 </div>
-                                <div class="row">
-                                    <div class="col span-1-of-3">
-                                        <label>&nbsp;</label>
-                                    </div>
-                                    <div class="col span-2-of-3">
-                                        <input type="submit" value="Posalji!">
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col span-1-of-3">
+                                    <label>Vasa poruka</label>
                                 </div>
-                            </form>
-                        </div>
-                    </section>
+                                <div class="col span-2-of-3">
+                                    <textarea name="message" placeholder=""></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col span-1-of-3">
+                                    <label>&nbsp;</label>
+                                </div>
+                                <div class="col span-2-of-3">
+                                    <input class="send-btn" type="submit" value="Posalji!">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+            <div id="footer">
+
+                <div class="wrapper2">
+                    <p class="footer-text2">Pratite nas</p>
+                    <a href="#"><i class="ion-social-facebook"></i></a>
+                    <a href="#"><i class="ion-social-googleplus"></i></a>
+                    <a href="#"><i class="ion-social-twitter"></i></a>
+                    <a href="#"><i class="ion-social-instagram"></i></a>
+                    <a href="#"><i class="ion-social-youtube"></i></a>
+                    <a href="#"><i class="ion-social-linkedin"></i></a>
                 </div>
-                <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            </div>
+            <p class="footer-text">
+                <br>Sva prava su zadrzana</p>
+        </div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    </div>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        jssor_1_slider_init();
+    </script>
+
 </body>
 
 </html>
